@@ -13,8 +13,7 @@
 
 #calc-main {
     width: 350px;
-    height: 500px;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
@@ -27,4 +26,20 @@
     height: 2rem;
     font-size: 1.5rem;
     text-align: right;
+}
+
+#calc-buttons {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto auto auto auto;
+}
+
+#btn-clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#btn-0 {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
