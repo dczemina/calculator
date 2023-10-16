@@ -45,15 +45,7 @@ btnSub.addEventListener('click', () => updateOperator('-'))
 btnMult.addEventListener('click', () => updateOperator('*'))
 btnDiv.addEventListener('click', () => updateOperator('/'))
 // Other
-btnEqual.addEventListener('click', () => {
-    number2 = +currentNumber; // store currentNumber as number2
-    currentNumber = ''; // reset currentNumber
-    display = `${display} ${number2}`
-    showDisplay();
-    currentNumber = operate();
-    showCurrentNumber();
-    resetVars();
-})
+btnEqual.addEventListener('click', () => equals())
 
 // Math Functions
 function add(a, b) {
@@ -115,11 +107,15 @@ function showCurrentNumber() {
 }
 
 function updateOperator(chosenOp) {
-    operator = chosenOp;
-    number1 = +currentNumber; // store currentNumber as number1
-    currentNumber = ''; // reset currentNumber
-    display = `${number1} ${operator}`
-    showDisplay();
+    if (!operator) {
+        operator = chosenOp;
+        number1 = +currentNumber; // store currentNumber as number1
+        currentNumber = ''; // reset currentNumber
+        display = `${number1} ${operator}`
+        showDisplay();
+    } else {
+        equals();
+    }
 }
 
 /**
@@ -127,6 +123,18 @@ function updateOperator(chosenOp) {
  */
 function showDisplay() {
     calcDisplay.textContent = display;
+}
+
+function equals() {
+    if (!number1 || !operator|| !currentNumber) return;
+
+    number2 = +currentNumber; // store currentNumber as number2
+    currentNumber = ''; // reset currentNumber
+    display = `${display} ${number2}`
+    showDisplay();
+    currentNumber = operate();
+    showCurrentNumber();
+    resetVars();
 }
 
 function resetVars() {
