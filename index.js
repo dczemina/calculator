@@ -44,6 +44,15 @@ btnAdd.addEventListener('click', () => updateOperator('+'))
 btnSub.addEventListener('click', () => updateOperator('-'))
 btnMult.addEventListener('click', () => updateOperator('*'))
 btnDiv.addEventListener('click', () => updateOperator('/'))
+// Other
+btnEqual.addEventListener('click', () => {
+    number2 = +currentNumber; // store currentNumber as number2
+    currentNumber = ''; // reset currentNumber
+    display = `${display} ${number2}`
+    showDisplay();
+    currentNumber = operate();
+    showCurrentNumber();
+})
 
 // Math Functions
 function add(a, b) {
@@ -66,21 +75,18 @@ function divide(a, b) {
 // UI Functions
 
 /**
- * 
- * @param {string} op the mathematical operator
- * @param {number} num1 the first number in the operation
- * @param {number} num2 the second number in the operation
+ *
  * @returns the result of the operation using the two numbers as input. num1 is the left-hand side of operations.
  */
-function operate(op, num1, num2) {
-    if (op === '+' || op.toLowerCase() === 'add')
-        return add(num1, num2);
-    if (op === '-' || op.toLowerCase() === 'subtract')
-        return subtract(num1, num2);
-    if (op === '*' || op.toLowerCase() === 'multiply')
-        return multiply(num1, num2);
-    if (op === '/' || op.toLowerCase() === 'divide')
-        return divide(num1, num2);
+function operate() {
+    if (operator === '+' || operator.toLowerCase() === 'add')
+        return add(number1, number2);
+    if (operator === '-' || operator.toLowerCase() === 'subtract')
+        return subtract(number1, number2);
+    if (operator === '*' || operator.toLowerCase() === 'multiply')
+        return multiply(number1, number2);
+    if (operator === '/' || operator.toLowerCase() === 'divide')
+        return divide(number1, number2);
     return 'Invalid operation'
 }
 
@@ -109,10 +115,10 @@ function showCurrentNumber() {
 
 function updateOperator(chosenOp) {
     operator = chosenOp;
-    display = `${currentNumber} ${operator}`
-    showDisplay()
-    number1 = currentNumber; // store currentNumber as number1
+    number1 = +currentNumber; // store currentNumber as number1
     currentNumber = ''; // reset currentNumber
+    display = `${number1} ${operator}`
+    showDisplay();
 }
 
 /**
