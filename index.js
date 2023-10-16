@@ -2,7 +2,7 @@
 let operator = null;
 let number1 = null;
 let number2 = null;
-let display;
+let display = '';
 let currentNumber = '0';
 
 // DOM variables
@@ -46,22 +46,19 @@ btnMult.addEventListener('click', () => updateOperator('*'))
 btnDiv.addEventListener('click', () => updateOperator('/'))
 // Other
 btnEqual.addEventListener('click', () => equals())
+btnClear.addEventListener('click', () => clear())
 
 // Math Functions
 function add(a, b) {
-    console.log(arguments);
     return a + b;
 }
 function subtract(a, b) {
-    console.log(arguments);
     return a - b;
 }
 function multiply(a, b) {
-    console.log(arguments);
     return a * b;
 }
 function divide(a, b) {
-    console.log(arguments);
     return a / b;
 }
 
@@ -142,6 +139,14 @@ function equals() {
     currentNumber = operate();
     showCurrentNumber();
     resetVars();
+}
+
+function clear() {
+    resetVars();
+    currentNumber = '0';
+    display = '';
+    showDisplay();
+    showCurrentNumber();
 }
 
 /**
