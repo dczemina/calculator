@@ -1,7 +1,7 @@
 // Calculator Variables
-let operator;
-let number1;
-let number2;
+let operator = null;
+let number1 = null;
+let number2 = null;
 let display;
 let currentNumber = '0';
 
@@ -52,6 +52,7 @@ btnEqual.addEventListener('click', () => {
     showDisplay();
     currentNumber = operate();
     showCurrentNumber();
+    resetVars();
 })
 
 // Math Functions
@@ -126,6 +127,12 @@ function updateOperator(chosenOp) {
  */
 function showDisplay() {
     calcDisplay.textContent = display;
+}
+
+function resetVars() {
+    operator = null;
+    number1 = null;
+    number2 = null;
 }
 
 // Initially display
