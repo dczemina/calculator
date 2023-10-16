@@ -27,6 +27,16 @@ const btnEqual = document.querySelector('#btn-equal');
 
 // DOM events
 btn0.addEventListener('click', () => updateDisplay(0))
+btn1.addEventListener('click', () => updateDisplay(1))
+btn2.addEventListener('click', () => updateDisplay(2))
+btn3.addEventListener('click', () => updateDisplay(3))
+btn4.addEventListener('click', () => updateDisplay(4))
+btn5.addEventListener('click', () => updateDisplay(5))
+btn6.addEventListener('click', () => updateDisplay(6))
+btn7.addEventListener('click', () => updateDisplay(7))
+btn8.addEventListener('click', () => updateDisplay(8))
+btn9.addEventListener('click', () => updateDisplay(9))
+btnDec.addEventListener('click', () => updateDisplay('.'))
 
 // Math Functions
 function add(a, b) {
