@@ -83,7 +83,11 @@ function operate(op, num1, num2) {
  */
 function updateCurrentNumber(digit) {
     if (currentNumber) {
-        currentNumber += digit;
+        if (currentNumber === '0') {
+            currentNumber = digit
+        } else {
+            currentNumber += digit;
+        }
     } else {
         currentNumber = '' + digit; // ensure currentNumber is a string
     }
