@@ -111,10 +111,11 @@ function updateOperator(chosenOp) {
     if (!operator) {
         operator = chosenOp;
         number1 = +currentNumber; // store currentNumber as number1
-        // currentNumber = ''; // reset currentNumber
+        currentNumber = null; // reset currentNumber
         display = `${number1} ${operator}`
         showDisplay();
     } else {
+        if (!currentNumber) currentNumber = number1;
         equals();
     }
 }
@@ -127,10 +128,12 @@ function showDisplay() {
 }
 
 /**
- * Perform the equation as long as number1, operator, and currentNumber have values
+ * Perform the equation as long as number1 and operator are defined
  */
 function equals() {
-    if (!number1 || !operator|| !currentNumber) return;
+    if (!number1 || !operator) return;
+
+    if (!currentNumber) currentNumber = number1;
 
     number2 = +currentNumber; // store currentNumber as number2
     currentNumber = ''; // reset currentNumber
