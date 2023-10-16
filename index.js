@@ -5,23 +5,28 @@ let number2;
 let display;
 
 // DOM variables
-const btnClear = document.querySelector('btn-clear');
-const btn0 = document.querySelector('btn-0');
-const btn1 = document.querySelector('btn-1');
-const btn2 = document.querySelector('btn-2');
-const btn3 = document.querySelector('btn-3');
-const btn4 = document.querySelector('btn-4');
-const btn5 = document.querySelector('btn-5');
-const btn6 = document.querySelector('btn-6');
-const btn7 = document.querySelector('btn-7');
-const btn8 = document.querySelector('btn-8');
-const btn9 = document.querySelector('btn-9');
-const btnDec = document.querySelector('btn-decimal');
-const btnAdd = document.querySelector('btn-add');
-const btnSub = document.querySelector('btn-sub');
-const btnMult = document.querySelector('btn-mult');
-const btnDiv = document.querySelector('btn-div');
-const btnEqual = document.querySelector('btn-equal');
+const calcEquation = document.querySelector('#calc-equation');
+const calcResult = document.querySelector('#calc-result');
+const btnClear = document.querySelector('#btn-clear');
+const btn0 = document.querySelector('#btn-0');
+const btn1 = document.querySelector('#btn-1');
+const btn2 = document.querySelector('#btn-2');
+const btn3 = document.querySelector('#btn-3');
+const btn4 = document.querySelector('#btn-4');
+const btn5 = document.querySelector('#btn-5');
+const btn6 = document.querySelector('#btn-6');
+const btn7 = document.querySelector('#btn-7');
+const btn8 = document.querySelector('#btn-8');
+const btn9 = document.querySelector('#btn-9');
+const btnDec = document.querySelector('#btn-decimal');
+const btnAdd = document.querySelector('#btn-add');
+const btnSub = document.querySelector('#btn-sub');
+const btnMult = document.querySelector('#btn-mult');
+const btnDiv = document.querySelector('#btn-div');
+const btnEqual = document.querySelector('#btn-equal');
+
+// DOM events
+btn0.addEventListener('click', () => updateDisplay(0))
 
 // Math Functions
 function add(a, b) {
@@ -60,4 +65,8 @@ function operate(op, num1, num2) {
     if (op === '/' || op.toLowerCase() === 'divide')
         return divide(num1, num2);
     return 'Invalid operation'
+}
+
+function updateDisplay(value) {
+    calcEquation.textContent = value;
 }
