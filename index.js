@@ -110,8 +110,14 @@ function showCurrentNumber() {
 function updateOperator(chosenOp) {
     operator = chosenOp;
     display = `${currentNumber} ${operator}`
+    showDisplay()
+}
 
-    console.log(display);
+/**
+ * Update the display in the UI
+ */
+function showDisplay() {
+    calcDisplay.textContent = display;
 }
 
 // Initially display
