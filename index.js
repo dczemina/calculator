@@ -3,10 +3,11 @@ let operator;
 let number1;
 let number2;
 let display;
+let currentNumber = '0';
 
 // DOM variables
-const calcEquation = document.querySelector('#calc-equation');
-const calcResult = document.querySelector('#calc-result');
+const calcDisplay = document.querySelector('#calc-display');
+const calcCurrentNumber = document.querySelector('#calc-current-number');
 const btnClear = document.querySelector('#btn-clear');
 const btn0 = document.querySelector('#btn-0');
 const btn1 = document.querySelector('#btn-1');
@@ -26,17 +27,17 @@ const btnDiv = document.querySelector('#btn-div');
 const btnEqual = document.querySelector('#btn-equal');
 
 // DOM events
-btn0.addEventListener('click', () => updateDisplay(0))
-btn1.addEventListener('click', () => updateDisplay(1))
-btn2.addEventListener('click', () => updateDisplay(2))
-btn3.addEventListener('click', () => updateDisplay(3))
-btn4.addEventListener('click', () => updateDisplay(4))
-btn5.addEventListener('click', () => updateDisplay(5))
-btn6.addEventListener('click', () => updateDisplay(6))
-btn7.addEventListener('click', () => updateDisplay(7))
-btn8.addEventListener('click', () => updateDisplay(8))
-btn9.addEventListener('click', () => updateDisplay(9))
-btnDec.addEventListener('click', () => updateDisplay('.'))
+btn0.addEventListener('click', () => updateCurrentNumber(0))
+btn1.addEventListener('click', () => updateCurrentNumber(1))
+btn2.addEventListener('click', () => updateCurrentNumber(2))
+btn3.addEventListener('click', () => updateCurrentNumber(3))
+btn4.addEventListener('click', () => updateCurrentNumber(4))
+btn5.addEventListener('click', () => updateCurrentNumber(5))
+btn6.addEventListener('click', () => updateCurrentNumber(6))
+btn7.addEventListener('click', () => updateCurrentNumber(7))
+btn8.addEventListener('click', () => updateCurrentNumber(8))
+btn9.addEventListener('click', () => updateCurrentNumber(9))
+btnDec.addEventListener('click', () => updateCurrentNumber('.'))
 
 // Math Functions
 function add(a, b) {
@@ -77,11 +78,11 @@ function operate(op, num1, num2) {
     return 'Invalid operation'
 }
 
-function updateDisplay(value) {
-    if (display) {
-        display += value;
+function updateCurrentNumber(digit) {
+    if (currentNumber) {
+        currentNumber += digit;
     } else {
-        display = '' + value; // ensure display is a string
+        currentNumber = '' + digit; // ensure currentNumber is a string
     }
-    calcEquation.textContent = display;
+    calcCurrentNumber.textContent = currentNumber;
 }
