@@ -111,7 +111,7 @@ function updateOperator(chosenOp) {
     if (!operator) {
         operator = chosenOp;
         number1 = +currentNumber; // store currentNumber as number1
-        currentNumber = ''; // reset currentNumber
+        // currentNumber = ''; // reset currentNumber
         display = `${number1} ${operator}`
         showDisplay();
     } else {
