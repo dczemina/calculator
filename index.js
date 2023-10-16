@@ -78,5 +78,10 @@ function operate(op, num1, num2) {
 }
 
 function updateDisplay(value) {
-    calcEquation.textContent = value;
+    if (display) {
+        display += value;
+    } else {
+        display = '' + value; // ensure display is a string
+    }
+    calcEquation.textContent = display;
 }
