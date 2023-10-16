@@ -25,6 +25,7 @@ const btnSub = document.querySelector('#btn-sub');
 const btnMult = document.querySelector('#btn-mult');
 const btnDiv = document.querySelector('#btn-div');
 const btnEqual = document.querySelector('#btn-equal');
+const btnDel = document.querySelector('#btn-del');
 
 // DOM events
 // Numbers
@@ -47,6 +48,12 @@ btnDiv.addEventListener('click', () => updateOperator('/'))
 // Other
 btnEqual.addEventListener('click', () => equals())
 btnClear.addEventListener('click', () => clear())
+btnDel.addEventListener('click', () => {
+    if (!currentNumber) return;
+    currentNumber = currentNumber.substring(0, currentNumber.length-1);
+    if (!currentNumber || currentNumber.length === 0) currentNumber = '0';
+    showCurrentNumber();
+})
 
 // Math Functions
 function add(a, b) {
