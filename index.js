@@ -111,6 +111,8 @@ function updateOperator(chosenOp) {
     operator = chosenOp;
     display = `${currentNumber} ${operator}`
     showDisplay()
+    number1 = currentNumber; // store currentNumber as number1
+    currentNumber = ''; // reset currentNumber
 }
 
 /**
