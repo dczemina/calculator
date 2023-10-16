@@ -78,6 +78,9 @@ function operate(op, num1, num2) {
     return 'Invalid operation'
 }
 
+/**
+ * @param {string} digit the digit or decimal in string format to add to the current number
+ */
 function updateCurrentNumber(digit) {
     if (currentNumber) {
         currentNumber += digit;
@@ -87,6 +90,9 @@ function updateCurrentNumber(digit) {
     displayCurrentNumber();
 }
 
+/**
+ * Update the current number display in the UI
+ */
 function displayCurrentNumber() {
     calcCurrentNumber.textContent = currentNumber;
 }
