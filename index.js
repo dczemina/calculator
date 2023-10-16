@@ -40,10 +40,10 @@ btn8.addEventListener('click', () => updateCurrentNumber('8'))
 btn9.addEventListener('click', () => updateCurrentNumber('9'))
 btnDec.addEventListener('click', () => updateCurrentNumber('.'))
 // Operators
-btnAdd.addEventListener('click', () => selectOperator('+'))
-btnSub.addEventListener('click', () => selectOperator('-'))
-btnMult.addEventListener('click', () => selectOperator('*'))
-btnDiv.addEventListener('click', () => selectOperator('/'))
+btnAdd.addEventListener('click', () => updateOperator('+'))
+btnSub.addEventListener('click', () => updateOperator('-'))
+btnMult.addEventListener('click', () => updateOperator('*'))
+btnDiv.addEventListener('click', () => updateOperator('/'))
 
 // Math Functions
 function add(a, b) {
@@ -107,10 +107,10 @@ function showCurrentNumber() {
     calcCurrentNumber.textContent = currentNumber;
 }
 
-function selectOperator(chosenOp) {
+function updateOperator(chosenOp) {
     operator = chosenOp;
     display = `${currentNumber} ${operator}`
-    
+
     console.log(display);
 }
 
