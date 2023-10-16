@@ -84,5 +84,12 @@ function updateCurrentNumber(digit) {
     } else {
         currentNumber = '' + digit; // ensure currentNumber is a string
     }
+    displayCurrentNumber();
+}
+
+function displayCurrentNumber() {
     calcCurrentNumber.textContent = currentNumber;
 }
+
+// Initially display
+displayCurrentNumber();
