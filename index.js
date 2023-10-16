@@ -106,6 +106,10 @@ function showCurrentNumber() {
     calcCurrentNumber.textContent = currentNumber;
 }
 
+/**
+ * Set the operator for the current equation. If an operator is already chosen, perform the equation instead.
+ * @param {string} chosenOp the operator
+ */
 function updateOperator(chosenOp) {
     if (!operator) {
         operator = chosenOp;
@@ -125,6 +129,9 @@ function showDisplay() {
     calcDisplay.textContent = display;
 }
 
+/**
+ * Perform the equation as long as number1, operator, and currentNumber have values
+ */
 function equals() {
     if (!number1 || !operator|| !currentNumber) return;
 
@@ -137,6 +144,9 @@ function equals() {
     resetVars();
 }
 
+/**
+ * Reset variables used within the calculation
+ */
 function resetVars() {
     operator = null;
     number1 = null;
