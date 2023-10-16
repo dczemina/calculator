@@ -27,17 +27,23 @@ const btnDiv = document.querySelector('#btn-div');
 const btnEqual = document.querySelector('#btn-equal');
 
 // DOM events
-btn0.addEventListener('click', () => updateCurrentNumber(0))
-btn1.addEventListener('click', () => updateCurrentNumber(1))
-btn2.addEventListener('click', () => updateCurrentNumber(2))
-btn3.addEventListener('click', () => updateCurrentNumber(3))
-btn4.addEventListener('click', () => updateCurrentNumber(4))
-btn5.addEventListener('click', () => updateCurrentNumber(5))
-btn6.addEventListener('click', () => updateCurrentNumber(6))
-btn7.addEventListener('click', () => updateCurrentNumber(7))
-btn8.addEventListener('click', () => updateCurrentNumber(8))
-btn9.addEventListener('click', () => updateCurrentNumber(9))
+// Numbers
+btn0.addEventListener('click', () => updateCurrentNumber('0'))
+btn1.addEventListener('click', () => updateCurrentNumber('1'))
+btn2.addEventListener('click', () => updateCurrentNumber('2'))
+btn3.addEventListener('click', () => updateCurrentNumber('3'))
+btn4.addEventListener('click', () => updateCurrentNumber('4'))
+btn5.addEventListener('click', () => updateCurrentNumber('5'))
+btn6.addEventListener('click', () => updateCurrentNumber('6'))
+btn7.addEventListener('click', () => updateCurrentNumber('7'))
+btn8.addEventListener('click', () => updateCurrentNumber('8'))
+btn9.addEventListener('click', () => updateCurrentNumber('9'))
 btnDec.addEventListener('click', () => updateCurrentNumber('.'))
+// Operators
+btnAdd.addEventListener('click', () => selectOperator('+'))
+btnSub.addEventListener('click', () => selectOperator('-'))
+btnMult.addEventListener('click', () => selectOperator('*'))
+btnDiv.addEventListener('click', () => selectOperator('/'))
 
 // Math Functions
 function add(a, b) {
@@ -91,15 +97,22 @@ function updateCurrentNumber(digit) {
     } else {
         currentNumber = '' + digit; // ensure currentNumber is a string
     }
-    displayCurrentNumber();
+    showCurrentNumber();
 }
 
 /**
  * Update the current number display in the UI
  */
-function displayCurrentNumber() {
+function showCurrentNumber() {
     calcCurrentNumber.textContent = currentNumber;
 }
 
+function selectOperator(chosenOp) {
+    operator = chosenOp;
+    display = `${currentNumber} ${operator}`
+    
+    console.log(display);
+}
+
 // Initially display
-displayCurrentNumber();
+showCurrentNumber();
