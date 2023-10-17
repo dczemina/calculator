@@ -4,8 +4,12 @@
     font-family: 'Verdana' 'Tahoma' sans-serif;
 }
 
+body > h1 {
+    text-align: center;
+}
+
 #outer-container {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 88px);
     width: 100vw;
     display: flex;
     align-items: center;
