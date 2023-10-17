@@ -5,11 +5,16 @@
 }
 
 #outer-container {
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#inner-container {
+    display: flex;
+    flex-direction: column;
 }
 
 #calc-main {
@@ -93,4 +98,16 @@ button {
 }
 .function-button:active {
     background-color: #0a9be3;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+}
+
+#github-link {
+    width: 1.25rem;
 }
