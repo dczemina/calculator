@@ -43,8 +43,8 @@ btnDec.addEventListener('click', () => updateCurrentNumber('.'))
 // Operators
 btnAdd.addEventListener('click', () => updateOperator('+'))
 btnSub.addEventListener('click', () => updateOperator('-'))
-btnMult.addEventListener('click', () => updateOperator('*'))
-btnDiv.addEventListener('click', () => updateOperator('/'))
+btnMult.addEventListener('click', () => updateOperator('×'))
+btnDiv.addEventListener('click', () => updateOperator('÷'))
 // Other
 btnEqual.addEventListener('click', () => equals())
 btnClear.addEventListener('click', () => clear())
@@ -80,9 +80,9 @@ function operate() {
         return add(number1, number2);
     if (operator === '-' || operator.toLowerCase() === 'subtract')
         return subtract(number1, number2);
-    if (operator === '*' || operator.toLowerCase() === 'multiply')
+    if (operator === '×' || operator.toLowerCase() === 'multiply')
         return multiply(number1, number2);
-    if (operator === '/' || operator.toLowerCase() === 'divide')
+    if (operator === '÷' || operator.toLowerCase() === 'divide')
         return divide(number1, number2);
     return 'Invalid operation'
 }
